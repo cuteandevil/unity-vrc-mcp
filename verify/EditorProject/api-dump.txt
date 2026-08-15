@@ -1,0 +1,130 @@
+== UnityEditor.MPE.ChannelService -> FOUND
+  M static Void Broadcast(Int32 channelId, Byte[] data)
+  M static Void Broadcast(Int32 channelId, String data)
+  M static Void Broadcast_Injected(Int32 channelId, ManagedSpanWrapper& data)
+  M static Void BroadcastBinary(Int32 channelId, Byte[] data)
+  M static Void BroadcastBinary_Injected(Int32 channelId, ManagedSpanWrapper& data)
+  M static Int32 ChannelNameToId(String channelName)
+  M static Int32 ChannelNameToId_Injected(ManagedSpanWrapper& channelName)
+  M static Boolean ChannelServiceHasHandlers(Int32 channelId)
+  M static Void CloseChannel(String channelName)
+  M static Void DispatchMessages()
+  M static String GetAddress()
+  M static Void GetAddress_Injected(ManagedSpanWrapper& ret)
+  M static ChannelClientInfo[] GetChannelClientList()
+  M static ChannelInfo GetChannelFromName(String channelName)
+  M static ChannelInfo[] GetChannelList()
+  M static Action GetOrCreateChannel(String channelName, Action`2 handler)
+  M static Int32 GetPort()
+  M static Void IncomingChannelServiceData(Int32 channelId, Int32 clientId, Byte[] data)
+  M static Void Internal_CloseChannel(String channelName)
+  M static Void Internal_CloseChannel_Injected(ManagedSpanWrapper& channelName)
+  M static Int32 Internal_GetOrCreateChannel(String channelName)
+  M static Int32 Internal_GetOrCreateChannel_Injected(ManagedSpanWrapper& channelName)
+  M static Boolean IsRunning()
+  M static Action RegisterMessageHandler(String channelName, Action`2 handler)
+  M static Void Send(Int32 connectionId, Byte[] data)
+  M static Void Send(Int32 connectionId, String data)
+  M static Void Send_Injected(Int32 connectionId, ManagedSpanWrapper& data)
+  M static Void SendBinary(Int32 connectionId, Byte[] data)
+  M static Void SendBinary_Injected(Int32 connectionId, ManagedSpanWrapper& data)
+  M static Void Start()
+  M static Void Stop()
+  M static Void UnregisterMessageHandler(String channelName, Action`2 handler)
+  F Dictionary`2 s_Handlers
+== UnityEditor.MPE.ChannelClient -> FOUND
+  M static Boolean ChannelClientHasHandlers(Int32 clientId)
+  M Void Close()
+  M static Void Close(String channelName)
+  M String get_channelName()
+  M Int32 get_clientId()
+  M Boolean get_isAutoTick()
+  M ChannelClientInfo GetChannelClientInfo()
+  M static ChannelClientInfo GetChannelClientInfo(String channelName)
+  M static ChannelClientInfo GetChannelClientInfo(Int32 clientId)
+  M static Void GetChannelClientInfo_Injected(Int32 clientId, ChannelClientInfo& ret)
+  M static ChannelClientInfo[] GetChannelClientList()
+  M static ChannelClient GetOrCreateClient(String channelName)
+  M static Void IncomingChannelClientData(Int32 clientId, Byte[] data)
+  M static Void Internal_CloseClient(String channelName)
+  M static Void Internal_CloseClient_Injected(ManagedSpanWrapper& channelName)
+  M static Int32 Internal_GetOrCreateClient(String channelName)
+  M static Int32 Internal_GetOrCreateClient_Injected(ManagedSpanWrapper& channelName)
+  M static Void Internal_Shutdown()
+  M Boolean IsConnected()
+  M static Boolean IsConnected(Int32 clientId)
+  M Int32 NewRequestId()
+  M static Int32 NewRequestId(Int32 clientId)
+  M Action RegisterMessageHandler(Action`1 handler)
+  M Action RegisterMessageHandler(Action`1 handler)
+  M Void Send(String data)
+  M Void Send(Byte[] data)
+  M static Void Send(Int32 connectionId, Byte[] data)
+  M static Void Send(Int32 clientId, String data)
+  M static Void Send_Injected(Int32 clientId, ManagedSpanWrapper& data)
+  M static Void SendBinary(Int32 clientId, Byte[] data)
+  M static Void SendBinary_Injected(Int32 clientId, ManagedSpanWrapper& data)
+  M Void set_isAutoTick(Boolean value)
+  M static Void Shutdown()
+  M Void Start(Boolean autoTick)
+  M static Void Start(Int32 clientId, Boolean autoTick)
+  M Void Stop()
+  M static Void Stop(Int32 clientId)
+  M Void Tick()
+  M static Void Tick(Int32 clientId)
+  M Void UnregisterMessageHandler(Action`1 handler)
+  M Void UnregisterMessageHandler(Action`1 handler)
+  F Dictionary`2 s_Clients
+  F List`1 m_Handlers
+  F List`1 m_BinaryHandlers
+  F Int32 <clientId>k__BackingField
+  F String <channelName>k__BackingField
+  F Boolean <isAutoTick>k__BackingField
+  P Int32 clientId
+  P String channelName
+  P Boolean isAutoTick
+== UnityEditor.LogEntries -> FOUND
+  M static Void AddMessagesImpl(Void* messagesBuffer, Int32 messagesBufferLength)
+  M static Void AddMessageWithDoubleClickCallback(LogEntry outputEntry)
+  M static Void Clear()
+  M static Void ClickStatusBar(Int32 count)
+  M static Void EndGettingEntries()
+  M static Int32 get_consoleFlags()
+  M static String GetCallstackFormattedSignatureInternal(MethodBase methodInfo)
+  M static Void GetCallstackFormattedSignatureInternal_Injected(MethodBase methodInfo, ManagedSpanWrapper& ret)
+  M static Int32 GetCount()
+  M static Void GetCountsByType(Int32& errorCount, Int32& warningCount, Int32& logCount)
+  M static Int32 GetEntryCount(Int32 row)
+  M static Boolean GetEntryInternal(Int32 row, LogEntry outputEntry)
+  M static Int32 GetEntryRowIndex(Int32 globalIndex, Int32 indexHint)
+  M static Boolean GetEntryTimestampInternal(Int32 row, String& outString)
+  M static Boolean GetEntryTimestampInternal_Injected(Int32 row, ManagedSpanWrapper& outString)
+  M static String GetFilteringText()
+  M static Void GetFilteringText_Injected(ManagedSpanWrapper& ret)
+  M static Void GetLinesAndModeFromEntryInternal(Int32 row, Int32 numberOfLines, Int32& mask, String& outString)
+  M static Void GetLinesAndModeFromEntryInternal_Injected(Int32 row, Int32 numberOfLines, Int32& mask, ManagedSpanWrapper& outString)
+  M static Int32 GetStatusMask()
+  M static String GetStatusText()
+  M static Void GetStatusText_Injected(ManagedSpanWrapper& ret)
+  M static Int32 GetStatusViewErrorIndex()
+  M static Void OpenFileOnSpecificLineAndColumn(String filePath, Int32 line, Int32 column)
+  M static Void OpenFileOnSpecificLineAndColumn_Injected(ManagedSpanWrapper& filePath, Int32 line, Int32 column)
+  M static Void RowGotDoubleClicked(Int32 index)
+  M static Void set_consoleFlags(Int32 value)
+  M static Void SetConsoleFlag(Int32 bit, Boolean value)
+  M static Void SetFilteringText(String filteringText)
+  M static Void SetFilteringText_Injected(ManagedSpanWrapper& filteringText)
+  M static Int32 StartGettingEntries()
+  P Int32 consoleFlags
+== UnityEditor.LogEntry -> FOUND
+  M static Void RemoveLogEntriesByMode(Int32 mode)
+  F String message
+  F String file
+  F Int32 line
+  F Int32 column
+  F Int32 mode
+  F EntityId entityId
+  F Int32 identifier
+  F Int32 globalLineIndex
+  F Int32 callstackTextStartUTF8
+  F Int32 callstackTextStartUTF16

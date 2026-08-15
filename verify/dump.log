@@ -1,0 +1,413 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.4/respin/6000.4.0a2-417aa67423b3' branch; Version is '6000.4.0a2 (79bd4f638ac0) revision 7978319'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Channel LicenseClient-liuzijian doesn't exist
+OS: 'Windows 11  (10.0.26200) 64bit CoreCountrySpecific' Language: 'zh' Physical Memory: 16107 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+Date: 2026-08-13T12:34:02Z
+[Licensing::Module] Successfully launched the LicensingClient (PId: 11588)
+
+COMMAND LINE ARGUMENTS:
+D:\Unity\Unity 6000.4.0a2\Editor\Unity.exe
+-batchmode
+-nographics
+-quit
+-projectPath
+C:\Users\liuzijian\unity-vrc-mcp\verify\EditorProject
+-executeMethod
+DumpApi.Dump
+-logFile
+C:\Users\liuzijian\unity-vrc-mcp\verify\dump.log
+Successfully changed project path to: C:\Users\liuzijian\unity-vrc-mcp\verify\EditorProject
+C:/Users/liuzijian/unity-vrc-mcp/verify/EditorProject
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+Player connection [12672]  Target information:
+
+Player connection [12672]  * "[IP] 192.168.1.100 [Port] 55504 [Flags] 2 [Guid] 1154956174 [EditorId] 1154956174 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-9Q86JVQF) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [12672] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [12672] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-35180" after 0.3 seconds.
+[Licensing::Module] Licensing is not yet initialized.
+Starting IPC server.
+Waiting for clients to connect on \\.\pipe\Unity-LicenseClient-liuzijian, press Ctrl-C to exit.
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-liuzijian" at "2026-08-13T12:34:02.8910446Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 11588, path: "D:/Unity/Unity 6000.4.0a2/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.2+ff71f16
+  Session Id:              9b6e733d922942c9a0ece27f333a6a76
+  Correlation Id:          8b37e6ced5e36a241623db36c4f2c77b
+  External correlation Id: 2468157277496069099
+  Machine Id:              Ep7b2dOya0plLP4isicQteG72yU=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-liuzijian" (connect: 0.37s, validation: 0.14s, handshake: 0.05s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-liuzijian-notifications" at "2026-08-13T12:34:03.0716535Z"
+[Licensing::Module] Connected to LicensingClient (PId: 11588, launch time: 0.01, total connection time: 0.55s)
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Error: Code 404 while processing request (status: Found 0 entitlement groups and 0 free entitlements matching requested entitlement ids)
+[Licensing::Client] Successfully updated license, isAsync: False, time: 0.03
+[Licensing::Client] Error: Code 404 while processing request (status: Found 0 entitlement groups and 0 free entitlements matching requested entitlement ids)
+[Licensing::Module] Error: 'com.unity.editor.headless' was not found.
+[Licensing::Module] Licensing Background thread has ended after 0.61s
+[Licensing::Module] Licensing is initialized (took 0.25s).
+[Licensing::Client] Error: Code 404 while processing request (status: Found 0 entitlement groups and 0 free entitlements matching requested entitlement ids)
+[Licensing::Module] Error: 'com.unity.editor.headless' was not found.
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Initialize engine version: 6000.4.0a2 (79bd4f638ac0)
+[Subsystems] Discovering subsystems at path D:/Unity/Unity 6000.4.0a2/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/liuzijian/unity-vrc-mcp/verify/EditorProject/Assets
+Forcing GfxDevice: Null
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+CodeReloadManager initialized
+Initialize mono
+Mono path[0] = 'D:/Unity/Unity 6000.4.0a2/Editor/Data/Managed'
+Mono path[1] = 'D:/Unity/Unity 6000.4.0a2/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/Unity/Unity 6000.4.0a2/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56180
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Unity/Unity 6000.4.0a2/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002707 seconds.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.336 seconds
+Domain Reload Profiling: 812ms
+	BeginReloadAssembly (194ms)
+		CreateAndSetChildDomain (6ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (63ms)
+	LoadAllAssembliesAndSetupDomain (173ms)
+		LoadAssemblies (189ms)
+		AnalyzeDomain (164ms)
+			TypeCache.Refresh (162ms)
+				TypeCache.ScanAssembly (150ms)
+	FinalizeReload (338ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (34ms)
+			BeforeProcessingInitializeOnLoad (75ms)
+			ProcessInitializeOnLoadAttributes (100ms)
+			ProcessInitializeOnLoadMethodAttributes (72ms)
+[Licensing::Client] Error: Code 404 while processing request (status: Found 0 entitlement groups and 0 free entitlements matching requested entitlement ids)
+[Licensing::Module] Error: 'com.unity.editor.headless' was not found.
+[Licensing::Client] Error: Code 404 while processing request (status: Found 0 entitlement groups and 0 free entitlements matching requested entitlement ids)
+[Licensing::Module] Error: 'com.unity.editor.headless' was not found.
+Application.AssetDatabase Initial Refresh Start
+Package Manager log level set to [2]
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 38 packages:
+  Built-in packages:
+    com.unity.multiplayer.center@1.0.0 (location: C:\Users\liuzijian\unity-vrc-mcp\verify\EditorProject\Library\PackageCache\com.unity.multiplayer.center@a7b1b162e079)
+    com.unity.modules.accessibility@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.physics2d)
+    com.unity.modules.screencapture@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.terrainphysics)
+    com.unity.modules.tilemap@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.tilemap)
+    com.unity.modules.ui@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.video)
+    com.unity.modules.vr@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.vr)
+    com.unity.modules.wind@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: D:\Unity\Unity 6000.4.0a2\Editor\Data\Resources\PackageManager\BuiltInPackages\com.unity.modules.hierarchycore)
+  Embedded packages:
+    com.vrchat-mcp@file:C:\Users\liuzijian\unity-vrc-mcp\verify\EditorProject\Packages\com.vrchat-mcp (location: C:\Users\liuzijian\unity-vrc-mcp\verify\EditorProject\Packages\com.vrchat-mcp)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.02 seconds
+Packages/com.vrchat-mcp is a symbolic link. Using symlinks in Unity projects may cause your project to become corrupted if you create multiple references to the same asset, use recursive symlinks or use symlinks to share assets between projects used with different versions of Unity. Make sure you know what you are doing.
+Disabling directory monitoring for current editor session. Found symlinks in project which cannot be used with directory monitoring. Directory monitoring settings can be changed in preferences.
+AcceleratorClientConnectionCallback - disconnected - :0
+[ScriptCompilation] Requested script compilation because: AssetDatabase observed changes in script compilation related files
+[Licensing::Client] Error: Code 404 while processing request (status: Found 0 entitlement groups and 0 free entitlements matching requested entitlement ids)
+[Licensing::Module] Error: 'com.unity.editor.headless' was not found.
+[Licensing::Client] Error: Code 404 while processing request (status: Found 0 entitlement groups and 0 free entitlements matching requested entitlement ids)
+[Licensing::Module] Error: 'com.unity.editor.headless' was not found.
+[Licensing::Client] Error: Code 404 while processing request (status: Found 0 entitlement groups and 0 free entitlements matching requested entitlement ids)
+[Licensing::Module] Error: 'com.unity.editor.headless' was not found.
+[Licensing::Client] Error: Code 404 while processing request (status: Found 0 entitlement groups and 0 free entitlements matching requested entitlement ids)
+[Licensing::Module] Error: 'com.unity.editor.headless' was not found.
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:80
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\Users\liuzijian\unity-vrc-mcp\verify\EditorProject
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping - application/grpc -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'gRPC - /UnityILPP.PostProcessing/Ping'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/2 POST http://ilpp/UnityILPP.PostProcessing/Ping - 200 - application/grpc 31.7897ms
+Starting: D:\Unity\Unity 6000.4.0a2\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/liuzijian/unity-vrc-mcp/verify/EditorProject
+[Licensing::Client] Error: Code 404 while processing request (status: Found 0 entitlement groups and 0 free entitlements matching requested entitlement ids)
+[Licensing::Module] Error: 'com.unity.editor.headless' was not found.
+[Licensing::Client] Error: Code 404 while processing request (status: Found 0 entitlement groups and 0 free entitlements matching requested entitlement ids)
+[Licensing::Module] Error: 'com.unity.editor.headless' was not found.
+DisplayProgressbar: Compiling Scripts
+ExitCode: 4 Duration: 0s82ms
+Rebuilding DAG because FileSignature timestamp changed: Library/Bee/1900b0aE-inputdata.json
+*** Tundra requires additional run (0.04 seconds), 0 items updated, 168 evaluated
+Starting: D:\Unity\Unity 6000.4.0a2\Editor\Data\netcorerun\netcorerun.exe "D:\Unity\Unity 6000.4.0a2\Editor\Data\Tools\BuildPipeline\ScriptCompilationBuildProgram.exe" "Library/Bee/1900b0aE.dag.json" "Library/Bee/1900b0aE-inputdata.json" "Library\Bee\buildprogram0.traceevents"
+WorkingDir: C:/Users/liuzijian/unity-vrc-mcp/verify/EditorProject
+ExitCode: 0 Duration: 0s229ms
+Starting: D:\Unity\Unity 6000.4.0a2\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --dagfilejson="Library\Bee\1900b0aE.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
+WorkingDir: C:/Users/liuzijian/unity-vrc-mcp/verify/EditorProject
+ExitCode: 0 Duration: 2s27ms
+Finished compiling graph: 180 nodes, 964 flattened edges (936 ToBuild, 8 ToUse), maximum node priority 38
+[155/177    0s] WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.rsp2
+[158/177    0s] WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.UnityAdditionalFile.txt
+[170/177    0s] WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll.mvfrm.rsp
+[171/177    0s] WriteText Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.rsp
+[172/177    0s] MovedFromExtractor Library/Bee/artifacts/mvdfrm/Unity.Multiplayer.Center.Editor.ref.dll_EB1F4B6E56116D4A.mvfrm
+[173/177    0s] MovedFromExtractor-Combine Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll.mvfrm
+[174/177    1s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+[175/177    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[176/177    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+*** Tundra build success (2.00 seconds), 9 items updated, 177 evaluated
+Total cache size 330968
+AssetDatabase: script compilation time: 2.786057s
+Begin MonoManager ReloadAssembly
+Total cache size after purge 330968, took 00:00:00.0128668
+[Licensing::Client] Error: Code 404 while processing request (status: Found 0 entitlement groups and 0 free entitlements matching requested entitlement ids)
+[Licensing::Module] Error: 'com.unity.editor.headless' was not found.
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp.dll at Library/ScriptAssemblies/Assembly-CSharp.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Start importing Assets/Editor using Guid(d687c2ccf44323247a1fd8a1db174ac8) (DefaultImporter) -> (Import Result ID: '8a829ead0fd0ed4f01c2921a2eaad709') in 0.017952 seconds [static dependencies only]
+Native extension for WindowsStandalone target not found
+[VrcMcp] MPE unavailable (unavailable: binding incomplete (StartChannel=False, CloseChannel=True, Send=False, DisconnectEvent=False)); falling back to TcpWs
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogWarning (object)
+VrcMcp.Bootstrap.BridgeBootstrap:CreateTransport () (at ./Packages/com.vrchat-mcp/Editor/Bootstrap/BridgeBootstrap.cs:96)
+VrcMcp.Bootstrap.BridgeBootstrap:StartBridge () (at ./Packages/com.vrchat-mcp/Editor/Bootstrap/BridgeBootstrap.cs:55)
+VrcMcp.Bootstrap.BridgeBootstrap:.cctor () (at ./Packages/com.vrchat-mcp/Editor/Bootstrap/BridgeBootstrap.cs:29)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: ./Packages/com.vrchat-mcp/Editor/Bootstrap/BridgeBootstrap.cs Line: 96)
+
+[VrcMcp] TcpWsTransport listening on 127.0.0.1:59595
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+VrcMcp.Transport.TcpWsTransport:Start () (at ./Packages/com.vrchat-mcp/Editor/Transport/TcpWsTransport.cs:47)
+VrcMcp.Bootstrap.BridgeBootstrap:StartBridge () (at ./Packages/com.vrchat-mcp/Editor/Bootstrap/BridgeBootstrap.cs:76)
+VrcMcp.Bootstrap.BridgeBootstrap:.cctor () (at ./Packages/com.vrchat-mcp/Editor/Bootstrap/BridgeBootstrap.cs:29)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: ./Packages/com.vrchat-mcp/Editor/Transport/TcpWsTransport.cs Line: 47)
+
+[VrcMcp] bridge started (transport=tcpws, port=59595)
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+VrcMcp.Bootstrap.BridgeBootstrap:StartBridge () (at ./Packages/com.vrchat-mcp/Editor/Bootstrap/BridgeBootstrap.cs:80)
+VrcMcp.Bootstrap.BridgeBootstrap:.cctor () (at ./Packages/com.vrchat-mcp/Editor/Bootstrap/BridgeBootstrap.cs:29)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: ./Packages/com.vrchat-mcp/Editor/Bootstrap/BridgeBootstrap.cs Line: 80)
+
+[VrcMcp] discovered 10 tools
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+VrcMcp.Core.McpToolRegistry:DiscoverTools () (at ./Packages/com.vrchat-mcp/Editor/Core/McpToolRegistry.cs:65)
+VrcMcp.Core.McpToolRegistry:Bootstrap () (at ./Packages/com.vrchat-mcp/Editor/Core/McpToolRegistry.cs:35)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+(Filename: ./Packages/com.vrchat-mcp/Editor/Core/McpToolRegistry.cs Line: 65)
+
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.397 seconds
+Domain Reload Profiling: 809ms
+	BeginReloadAssembly (258ms)
+		DisableScriptedObjects (10ms)
+		CreateAndSetChildDomain (49ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (87ms)
+	LoadAllAssembliesAndSetupDomain (22ms)
+		LoadAssemblies (175ms)
+		AnalyzeDomain (8ms)
+			TypeCache.Refresh (6ms)
+	FinalizeReload (398ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (18ms)
+			BeforeProcessingInitializeOnLoad (100ms)
+			ProcessInitializeOnLoadAttributes (128ms)
+			ProcessInitializeOnLoadMethodAttributes (38ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
+Asset Pipeline Refresh (id=01cd76dafb2d6464092155e9c0809336): Total: 3.898 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=1 (actual=1, local cache=0, cache server=0)
+		Asset DB Process Time: managed=2 ms, native=605 ms
+		Asset DB Callback time: managed=54 ms, native=29 ms
+		Scripting: domain reloads=1, domain reload time=412 ms, compile time=2788 ms, other=6 ms
+		Project Asset Count: scripts=123, non-scripts=81
+		Asset File Changes: new=2, changed=2, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokePackagesCallback: 31.875ms
+	ApplyChangesToAssetFolders: 1.382ms
+	Scan: 118.724ms
+	OnSourceAssetsModified: 1.085ms
+	CategorizeAssets: 1.020ms
+	CompileScripts: 2787.570ms
+	ImportOutOfDateAssets: 419.830ms (398.429ms without children)
+		ImportManagerImport: 21.155ms (2.876ms without children)
+	PostProcessAllAssets: 54.857ms
+		MonoPostProcessAllAssets: 53.015ms
+			AssetPostprocessor.OnPostprocessAllAssets 12.418ms
+			StyleCatalogPostProcessor.OnPostprocessAllAssets 11.564ms
+			WindowAssetPostprocessingWatcher.OnPostprocessAllAssets 7.954ms
+			BuilderAssetPostprocessor.OnPostprocessAllAssets 5.340ms
+			AssetChangedListener.OnPostprocessAllAssets 1.841ms
+			SyncVS.PostprocessSyncProject 1.303ms
+			ScenarioDriftAssetsTracker.OnPostprocessAllAssets 1.110ms
+			RetainedModeAssetPostprocessor.OnPostprocessAllAssets 1.083ms
+	UnloadStreamsBegin: 1.230ms
+	Untracked: 474.537ms
+
+Application.AssetDatabase Initial Refresh End
+Scanning for USB devices : 1.741ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-EditorProject
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 96 unused Assets / (1.1 MB). Loaded Objects now: 696.
+Memory consumption went from 94.3 MB to 93.2 MB.
+Total: 4.269400 ms (FindLiveObjects: 0.042800 ms CreateObjectMapping: 0.007600 ms MarkObjects: 3.843100 ms  DeleteObjects: 0.374000 ms)
+
+[DumpApi] wrote C:\Users\liuzijian\unity-vrc-mcp\verify\EditorProject\api-dump.txt
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+DumpApi:Dump () (at Assets/Editor/DumpApi.cs:37)
+
+(Filename: Assets/Editor/DumpApi.cs Line: 37)
+
+Curl error 42: Callback aborted
+Batchmode quit successfully invoked - shutting down!
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-liuzijian-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-liuzijian channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+Shut down.
+abort_threads: Failed aborting id: 0000000000001984, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 0000000000003068, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 0000000000001984, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 0000000000003068, mono_thread_manage will ignore it
+
+debugger-agent: Unable to listen on 3536
+Exiting batchmode successfully now!
+Exiting without the bug reporter. Application will terminate with return code 0

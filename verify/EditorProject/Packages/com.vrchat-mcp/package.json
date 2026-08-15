@@ -1,0 +1,10 @@
+{
+  "name": "com.vrchat-mcp",
+  "version": "0.1.0",
+  "displayName": "VRChat MCP Bridge",
+  "description": "MCP bridge for VRChat avatar editing in Unity Editor. Exposes Unity Editor APIs as MCP tools to agent CLIs via a local WebSocket channel.",
+  "unity": "2021.3",
+  "keywords": [ "mcp", "vrchat", "editor", "ai", "bridge" ],
+  "author": { "name": "VRChat MCP" },
+  "license": "MIT"
+}

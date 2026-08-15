@@ -1,0 +1,150 @@
+== UnityEditor.MPE.ChannelService -> FOUND
+  M static System.Void Broadcast(System.Int32 channelId, System.Byte[] data)
+  M static System.Void Broadcast(System.Int32 channelId, System.String data)
+  M static System.Void Broadcast_Injected(System.Int32 channelId, UnityEngine.Bindings.ManagedSpanWrapper& data)
+  M static System.Void BroadcastBinary(System.Int32 channelId, System.Byte[] data)
+  M static System.Void BroadcastBinary_Injected(System.Int32 channelId, UnityEngine.Bindings.ManagedSpanWrapper& data)
+  M static System.Int32 ChannelNameToId(System.String channelName)
+  M static System.Int32 ChannelNameToId_Injected(UnityEngine.Bindings.ManagedSpanWrapper& channelName)
+  M static System.Boolean ChannelServiceHasHandlers(System.Int32 channelId)
+  M static System.Void CloseChannel(System.String channelName)
+  M static System.Void DispatchMessages()
+  M static System.String GetAddress()
+  M static System.Void GetAddress_Injected(UnityEngine.Bindings.ManagedSpanWrapper& ret)
+  M static UnityEditor.MPE.ChannelClientInfo[] GetChannelClientList()
+  M static UnityEditor.MPE.ChannelInfo GetChannelFromName(System.String channelName)
+  M static UnityEditor.MPE.ChannelInfo[] GetChannelList()
+  M static System.Action GetOrCreateChannel(System.String channelName, System.Action`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] handler)
+  M static System.Int32 GetPort()
+  M static System.Void IncomingChannelServiceData(System.Int32 channelId, System.Int32 clientId, System.Byte[] data)
+  M static System.Void Internal_CloseChannel(System.String channelName)
+  M static System.Void Internal_CloseChannel_Injected(UnityEngine.Bindings.ManagedSpanWrapper& channelName)
+  M static System.Int32 Internal_GetOrCreateChannel(System.String channelName)
+  M static System.Int32 Internal_GetOrCreateChannel_Injected(UnityEngine.Bindings.ManagedSpanWrapper& channelName)
+  M static System.Boolean IsRunning()
+  M static System.Action RegisterMessageHandler(System.String channelName, System.Action`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] handler)
+  M static System.Void Send(System.Int32 connectionId, System.Byte[] data)
+  M static System.Void Send(System.Int32 connectionId, System.String data)
+  M static System.Void Send_Injected(System.Int32 connectionId, UnityEngine.Bindings.ManagedSpanWrapper& data)
+  M static System.Void SendBinary(System.Int32 connectionId, System.Byte[] data)
+  M static System.Void SendBinary_Injected(System.Int32 connectionId, UnityEngine.Bindings.ManagedSpanWrapper& data)
+  M static System.Void Start()
+  M static System.Void Stop()
+  M static System.Void UnregisterMessageHandler(System.String channelName, System.Action`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] handler)
+  F System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Collections.Generic.List`1[[System.Action`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] s_Handlers
+== UnityEditor.MPE.ChannelClient -> FOUND
+  M static System.Boolean ChannelClientHasHandlers(System.Int32 clientId)
+  M System.Void Close()
+  M static System.Void Close(System.String channelName)
+  M System.String get_channelName()
+  M System.Int32 get_clientId()
+  M System.Boolean get_isAutoTick()
+  M UnityEditor.MPE.ChannelClientInfo GetChannelClientInfo()
+  M static UnityEditor.MPE.ChannelClientInfo GetChannelClientInfo(System.String channelName)
+  M static UnityEditor.MPE.ChannelClientInfo GetChannelClientInfo(System.Int32 clientId)
+  M static System.Void GetChannelClientInfo_Injected(System.Int32 clientId, UnityEditor.MPE.ChannelClientInfo& ret)
+  M static UnityEditor.MPE.ChannelClientInfo[] GetChannelClientList()
+  M static UnityEditor.MPE.ChannelClient GetOrCreateClient(System.String channelName)
+  M static System.Void IncomingChannelClientData(System.Int32 clientId, System.Byte[] data)
+  M static System.Void Internal_CloseClient(System.String channelName)
+  M static System.Void Internal_CloseClient_Injected(UnityEngine.Bindings.ManagedSpanWrapper& channelName)
+  M static System.Int32 Internal_GetOrCreateClient(System.String channelName)
+  M static System.Int32 Internal_GetOrCreateClient_Injected(UnityEngine.Bindings.ManagedSpanWrapper& channelName)
+  M static System.Void Internal_Shutdown()
+  M System.Boolean IsConnected()
+  M static System.Boolean IsConnected(System.Int32 clientId)
+  M System.Int32 NewRequestId()
+  M static System.Int32 NewRequestId(System.Int32 clientId)
+  M System.Action RegisterMessageHandler(System.Action`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] handler)
+  M System.Action RegisterMessageHandler(System.Action`1[[System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] handler)
+  M System.Void Send(System.String data)
+  M System.Void Send(System.Byte[] data)
+  M static System.Void Send(System.Int32 connectionId, System.Byte[] data)
+  M static System.Void Send(System.Int32 clientId, System.String data)
+  M static System.Void Send_Injected(System.Int32 clientId, UnityEngine.Bindings.ManagedSpanWrapper& data)
+  M static System.Void SendBinary(System.Int32 clientId, System.Byte[] data)
+  M static System.Void SendBinary_Injected(System.Int32 clientId, UnityEngine.Bindings.ManagedSpanWrapper& data)
+  M System.Void set_isAutoTick(System.Boolean value)
+  M static System.Void Shutdown()
+  M System.Void Start(System.Boolean autoTick)
+  M static System.Void Start(System.Int32 clientId, System.Boolean autoTick)
+  M System.Void Stop()
+  M static System.Void Stop(System.Int32 clientId)
+  M System.Void Tick()
+  M static System.Void Tick(System.Int32 clientId)
+  M System.Void UnregisterMessageHandler(System.Action`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] handler)
+  M System.Void UnregisterMessageHandler(System.Action`1[[System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] handler)
+  F System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[UnityEditor.MPE.ChannelClient, UnityEditor.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]] s_Clients
+  F System.Collections.Generic.List`1[[System.Action`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] m_Handlers
+  F System.Collections.Generic.List`1[[System.Action`1[[System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] m_BinaryHandlers
+  F System.Int32 <clientId>k__BackingField
+  F System.String <channelName>k__BackingField
+  F System.Boolean <isAutoTick>k__BackingField
+== UnityEditor.MPE.ChannelInfo -> FOUND
+  M System.Boolean Equals(UnityEditor.MPE.ChannelInfo obj)
+  M System.Boolean Equals(System.Object obj)
+  M System.Int32 get_id()
+  M System.String get_name()
+  M System.Int32 GetHashCode()
+  M static System.Boolean op_Equality(UnityEditor.MPE.ChannelInfo x, UnityEditor.MPE.ChannelInfo y)
+  M static System.Boolean op_Inequality(UnityEditor.MPE.ChannelInfo x, UnityEditor.MPE.ChannelInfo y)
+  F UnityEditor.MPE.ChannelInfo invalidChannel
+  F System.String m_ChannelName
+  F System.Int32 m_ChannelId
+== UnityEditor.MPE.ChannelClientInfo -> FOUND
+  M System.Boolean Equals(UnityEditor.MPE.ChannelClientInfo obj)
+  M System.Boolean Equals(System.Object obj)
+  M System.Int32 get_clientId()
+  M System.Int32 get_connectionId()
+  M System.String get_name()
+  M System.Int32 GetHashCode()
+  M static System.Boolean op_Equality(UnityEditor.MPE.ChannelClientInfo x, UnityEditor.MPE.ChannelClientInfo y)
+  M static System.Boolean op_Inequality(UnityEditor.MPE.ChannelClientInfo x, UnityEditor.MPE.ChannelClientInfo y)
+  F UnityEditor.MPE.ChannelClientInfo invalidClient
+  F System.String m_ChannelName
+  F System.Int32 m_ChannelClientId
+  F System.Int32 m_ConnectionId
+== UnityEditor.LogEntries -> FOUND
+  M static System.Void AddMessagesImpl(System.Void* messagesBuffer, System.Int32 messagesBufferLength)
+  M static System.Void AddMessageWithDoubleClickCallback(UnityEditor.LogEntry outputEntry)
+  M static System.Void Clear()
+  M static System.Void ClickStatusBar(System.Int32 count)
+  M static System.Void EndGettingEntries()
+  M static System.Int32 get_consoleFlags()
+  M static System.String GetCallstackFormattedSignatureInternal(System.Reflection.MethodBase methodInfo)
+  M static System.Void GetCallstackFormattedSignatureInternal_Injected(System.Reflection.MethodBase methodInfo, UnityEngine.Bindings.ManagedSpanWrapper& ret)
+  M static System.Int32 GetCount()
+  M static System.Void GetCountsByType(System.Int32& errorCount, System.Int32& warningCount, System.Int32& logCount)
+  M static System.Int32 GetEntryCount(System.Int32 row)
+  M static System.Boolean GetEntryInternal(System.Int32 row, UnityEditor.LogEntry outputEntry)
+  M static System.Int32 GetEntryRowIndex(System.Int32 globalIndex, System.Int32 indexHint)
+  M static System.Boolean GetEntryTimestampInternal(System.Int32 row, System.String& outString)
+  M static System.Boolean GetEntryTimestampInternal_Injected(System.Int32 row, UnityEngine.Bindings.ManagedSpanWrapper& outString)
+  M static System.String GetFilteringText()
+  M static System.Void GetFilteringText_Injected(UnityEngine.Bindings.ManagedSpanWrapper& ret)
+  M static System.Void GetLinesAndModeFromEntryInternal(System.Int32 row, System.Int32 numberOfLines, System.Int32& mask, System.String& outString)
+  M static System.Void GetLinesAndModeFromEntryInternal_Injected(System.Int32 row, System.Int32 numberOfLines, System.Int32& mask, UnityEngine.Bindings.ManagedSpanWrapper& outString)
+  M static System.Int32 GetStatusMask()
+  M static System.String GetStatusText()
+  M static System.Void GetStatusText_Injected(UnityEngine.Bindings.ManagedSpanWrapper& ret)
+  M static System.Int32 GetStatusViewErrorIndex()
+  M static System.Void OpenFileOnSpecificLineAndColumn(System.String filePath, System.Int32 line, System.Int32 column)
+  M static System.Void OpenFileOnSpecificLineAndColumn_Injected(UnityEngine.Bindings.ManagedSpanWrapper& filePath, System.Int32 line, System.Int32 column)
+  M static System.Void RowGotDoubleClicked(System.Int32 index)
+  M static System.Void set_consoleFlags(System.Int32 value)
+  M static System.Void SetConsoleFlag(System.Int32 bit, System.Boolean value)
+  M static System.Void SetFilteringText(System.String filteringText)
+  M static System.Void SetFilteringText_Injected(UnityEngine.Bindings.ManagedSpanWrapper& filteringText)
+  M static System.Int32 StartGettingEntries()
+== UnityEditor.LogEntry -> FOUND
+  M static System.Void RemoveLogEntriesByMode(System.Int32 mode)
+  F System.String message
+  F System.String file
+  F System.Int32 line
+  F System.Int32 column
+  F System.Int32 mode
+  F UnityEngine.EntityId entityId
+  F System.Int32 identifier
+  F System.Int32 globalLineIndex
+  F System.Int32 callstackTextStartUTF8
+  F System.Int32 callstackTextStartUTF16

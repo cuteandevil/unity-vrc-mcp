@@ -1,0 +1,19 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "unity-vrc": {
+      "type": "local",
+      "command": [
+        "uv",
+        "run",
+        "--directory",
+        "C:/Users/liuzijian/unity-vrc-mcp/server",
+        "unity-mcp-server"
+      ],
+      "enabled": true,
+      "environment": {
+        "UNITY_MCP_PROJECT_DIR": "C:/path/to/your/unity/vrchat/project"
+      }
+    }
+  }
+}

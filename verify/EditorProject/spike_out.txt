@@ -1,0 +1,12 @@
+probe1_create_file_exists=True
+probe1_undo_file_exists=True
+probe1_undo_obj_alive=True
+probe1_verdict=FILE_SURVIVES
+probe2_create_file_exists=True
+probe2_undo_file_exists=True
+probe2_undo_obj_alive=False
+probe2_verdict=FILE_SURVIVES
+probe3_deleted=True
+probe3_undo_file_exists=False
+probe3_undo_obj_alive=False
+probe3_verdict=FILE_NOT_RESTORED

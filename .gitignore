@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Unity
+Library/
+Temp/
+Obj/
+Logs/
+UserSettings/
+*.csproj
+*.sln
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Local config
+opencode.json
+opencode.jsonc
