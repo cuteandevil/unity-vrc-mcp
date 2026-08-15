@@ -23,7 +23,7 @@ agent CLI ──stdio──► FastMCP server (Python) ──WebSocket──► 
    uv run unity-mcp-server
    ```
 
-3. **MCP 客户端。** 把 `opencode.example.json` 作为配置参考（任意支持 stdio MCP 的 agent CLI 均可），设置 `UNITY_MCP_PROJECT_DIR` 为你 Unity 项目的路径，重启 agent 会话。
+3. **MCP 客户端。** 把 `UNITY_MCP_PROJECT_DIR` 设为你的 Unity 项目路径，在 agent CLI 的 MCP 配置中注册 `unity-mcp-server`（stdio，cwd=server），重启 agent 会话。
 
    如果项目目录有歧义（多个 Unity 实例），用 `UNITY_MCP_CHANNEL_FILE` 钉死具体的 channel 文件。选择规则：最新的 channel 文件胜出；mtime 相同 → ctime；完全相同 → 拒绝并提示钉定。
 
