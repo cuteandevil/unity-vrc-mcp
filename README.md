@@ -1,117 +1,77 @@
 # unity-vrc-mcp
 
-Unity-LLM bridge: an MCP server that lets agent CLIs (opencode) edit VRChat
-avatars inside a running Unity Editor — scene hierarchy, selection, undo
-transactions, console, FBX import, Animator editing, VRCSDK health checks,
-and one-click `import_avatar_from_zip`.
+Unity-LLM 桥：一个 MCP 服务器，让 agent CLI（opencode）在**运行中的 Unity 编辑器**里编辑 VRChat 模型——场景层级、选中对象、undo 事务、Console、FBX 导入、Animator 编辑、VRCSDK 健康检查，以及一键 `import_avatar_from_zip`。
 
 ```
-agent CLI (opencode) ──stdio──► FastMCP server (Python) ──WebSocket──► Unity Editor plugin (com.vrchat-mcp)
+agent CLI (opencode) ──stdio──► FastMCP server (Python) ──WebSocket──► Unity Editor 插件 (com.vrchat-mcp)
 ```
 
-Full design: [docs/DESIGN.md](docs/DESIGN.md) (architecture, transport,
-compat registry, batch/undo state machine, validation layer, import pipeline,
-phases, risk register, §0 verification discipline). Start with the index at
-the top of DESIGN.md to find any topic.
+完整设计文档见 [docs/DESIGN.md](docs/DESIGN.md)（架构、传输层、兼容性注册表、batch/undo 状态机、校验层、导入流水线、阶段划分、风险登记、§0 验证纪律）。从 DESIGN.md 顶部的索引开始查阅任意主题。
 
-## Requirements
+## 环境要求
 
-- Unity 2022.3 (tested on **2022.3.22f1c1**; early phases also verified on
-  6000.4.0a2), Windows
-- Python >= 3.10 via [uv](https://docs.astral.sh/uv/)
+- Unity 2022.3（在 **2022.3.22f1c1** 上测试；早期阶段也在 6000.4.0a2 上验证过），Windows
+- Python >= 3.10，通过 [uv](https://docs.astral.sh/uv/) 管理
 
-## Install
+## 安装
 
-1. **Unity side.** Copy or symlink `Packages/com.vrchat-mcp` into your Unity
-   project's `Packages/` folder. The bridge auto-starts; toggle via menu
-   `Tools > VRChat MCP > Start/Stop Bridge`. It writes
-   `<project>/.unity-mcp/channel-{pid}.json` with the ephemeral port.
-   Transport is auto-selected: **MPE first** (reflection-bound), **TcpWs
-   fallback** (hand-rolled WebSocket; force with EditorPref
-   `VrcMcp.Transport=tcpws`).
+1. **Unity 侧。** 把 `Packages/com.vrchat-mcp` 复制或软链到你的 Unity 项目 `Packages/` 目录。桥接自动启动；通过菜单 `Tools > VRChat MCP > Start/Stop Bridge` 开关。它会在 `<project>/.unity-mcp/channel-{pid}.json` 写入临时端口。传输自动选择：**优先 MPE**（反射绑定），**TcpWs 兜底**（手写 WebSocket；可用 EditorPref `VrcMcp.Transport=tcpws` 强制）。
 
-2. **Server side.**
+2. **服务端。**
 
    ```
    cd server
-   uv sync          # creates .venv (Python 3.12) with fastmcp/websockets/psutil
+   uv sync          # 创建 .venv（Python 3.12），安装 fastmcp/websockets/psutil
    uv run unity-mcp-server
    ```
 
-3. **opencode.** Copy `opencode.example.json` → `opencode.json` (or merge the
-   `mcp.unity-vrc` block) and set `UNITY_MCP_PROJECT_DIR` to your Unity
-   project path. Restart opencode.
+3. **opencode。** 复制 `opencode.example.json` → `opencode.json`（或合并 `mcp.unity-vrc` 配置块），把 `UNITY_MCP_PROJECT_DIR` 设为你 Unity 项目的路径，重启 opencode。
 
-   If the project dir is ambiguous (multiple Unity instances), pin the exact
-   channel file with `UNITY_MCP_CHANNEL_FILE`. Selection rule: newest channel
-   file wins; mtime tie → ctime; identical tie → refuse with a pin hint.
+   如果项目目录有歧义（多个 Unity 实例），用 `UNITY_MCP_CHANNEL_FILE` 钉死具体的 channel 文件。选择规则：最新的 channel 文件胜出；mtime 相同 → ctime；完全相同 → 拒绝并提示钉定。
 
-## Tools (36, grouped)
+## 工具（36 个，分组）
 
-- **Query/read**: `ping`, `get_project_info`, `get_scene_hierarchy`,
-  `get_selection`, `get_object_details`, `get_console_logs`, `get_batch_state`
-- **Edit** (undoable): `edit_create_object`, `edit_destroy_object`,
-  `edit_duplicate_object`, `edit_set_name`, `edit_set_active`,
-  `edit_set_parent`, `edit_set_sibling_index`, `edit_transform`,
-  `edit_add_component`, `edit_remove_component`, `edit_set_component_property`
-- **Transactions**: `begin_batch`, `end_batch`, `undo`, `redo`
-- **Assets**: `asset_import_fbx`, `asset_delete`, `prefab_create`,
-  `prefab_instantiate`, `save_scene`
-- **Animator**: `create_animator_controller`, `add_animator_state`,
-  `add_animator_transition`, `get_animator_controller`
-- **Avatar/SDK**: `import_avatar_from_zip`, `import_unitypackage`,
-  `apply_shader_package_install`, `open_vrc_control_panel`,
-  `sdk_repair_test_files`
+- **查询/读取**：`ping`、`get_project_info`、`get_scene_hierarchy`、`get_selection`、`get_object_details`、`get_console_logs`、`get_batch_state`
+- **编辑**（可 undo）：`edit_create_object`、`edit_destroy_object`、`edit_duplicate_object`、`edit_set_name`、`edit_set_active`、`edit_set_parent`、`edit_set_sibling_index`、`edit_transform`、`edit_add_component`、`edit_remove_component`、`edit_set_component_property`
+- **事务**：`begin_batch`、`end_batch`、`undo`、`redo`
+- **资产**：`asset_import_fbx`、`asset_delete`、`prefab_create`、`prefab_instantiate`、`save_scene`
+- **Animator**：`create_animator_controller`、`add_animator_state`、`add_animator_transition`、`get_animator_controller`
+- **模型/SDK**：`import_avatar_from_zip`、`import_unitypackage`、`apply_shader_package_install`、`open_vrc_control_panel`、`sdk_repair_test_files`
 
-Destructive tools use permission prefixes (`edit_*`, `apply_*`, `save_*`,
-`import_*`, `sdk_*` → ask in opencode.json). New tools/rules require an
-opencode session restart to appear in the tool list.
+破坏性工具使用权限前缀（`edit_*`、`apply_*`、`save_*`、`import_*`、`sdk_*` → 在 opencode.json 中请求审批）。新增工具/规则需要重启 opencode 会话才会出现在工具列表里。
 
-## Notes for real usage (trial period)
+## 真实使用注意事项（试用期）
 
-- **VRCSDK health**: official SDK 3.10.x ships two unguarded test files that
-  break compilation; a VCC re-sync restores them. After any VCC update, check
-  `get_project_info.sdkHealth` (status `ok` expected) and run
-  `sdk_repair_test_files` if `broken` (DESIGN §26/§27).
-- Batch state auto-closes when the last client disconnects (`end_batch` on a
-  fresh connection reports the closed state, not an error).
-- Multi-client is supported (broadcast + id-matched replies), but the typical
-  usage is one opencode session per editor.
-- **Magenta/pink models after import**: most VRChat avatar packages depend on a
-  third-party shader (lilToon/Poiyomi) that the author does not bundle (installed
-  via VCC instead). If the project lacks it, materials render magenta with no
-  console error. `import_unitypackage`/`import_avatar_from_zip` now report this
-  in `needsAttention` (family inferred from serialized property names, e.g.
-  "lilToon shader missing on N material(s) ..."), and the import pipeline
-  auto-installs whitelisted families (`lilToon`) from the official VPM repo when
-  missing - successes are recorded in `autoFixed`, failures stay in
-  `needsAttention` with the reason appended (DESIGN §31/§33). `apply_shader_
-  package_install` performs the same install manually (`family`; optional
-  `localZipPath` to install from a zip instead of downloading). Already-installed
-  packages are never re-installed or replaced.
+- **VRCSDK 健康**：官方 SDK 3.10.x 自带两个会导致编译失败的未防护测试文件；VCC 重新同步会恢复它们。每次 VCC 更新后，检查 `get_project_info.sdkHealth`（预期 `ok`），若为 `broken` 则运行 `sdk_repair_test_files`（DESIGN §26/§27）。
+- 最后一个客户端断开时 batch 状态自动关闭（新连接上调用 `end_batch` 返回已关闭状态，不是错误）。
+- 支持多客户端（广播 + 按 id 匹配回复），但典型用法是一个编辑器对应一个 opencode 会话。
+- **导入后洋红/粉色模型**：大多数 VRChat 模型包依赖第三方 shader（lilToon/Poiyomi），作者通常不打包（改用 VCC 安装）。如果项目缺少，材质会显示洋红且无 Console 报错。`import_unitypackage`/`import_avatar_from_zip` 现在会在 `needsAttention` 中报告（从序列化属性名推断家族，如 "lilToon shader missing on N material(s) ..."），导入流水线会对白名单家族（`lilToon`）从官方 VPM 源自动安装——成功记录到 `autoFixed`，失败保留在 `needsAttention` 并附带原因（DESIGN §31/§33）。`apply_shader_package_install` 可手动执行同样的安装（`family`；可选 `localZipPath` 用本地 zip 替代下载）。已安装的包绝不重装或替换。
 
-## Tests
+## 测试
 
-All run with `server/.venv/Scripts/python.exe`:
+全部用 `server/.venv/Scripts/python.exe` 运行：
 
-| Test | Needs | Covers |
-|------|-------|--------|
-| `run_regression.py` | running editor | 11 groups: tools, JSON safety, single-reply, disconnect, edit/undo, hierarchy/prefab, batch integrity, import pipeline, sdk health loop, animator, param delivery |
-| `test_mcp_stdio_smoke.py` | none (spawns server) | 36-tool stdio smoke |
-| `test_tcpws_transport.py` | editor with `VrcMcp.Transport=tcpws` | 13 raw-frame/disconnect/batch/multi-client/heartbeat checks |
-| `test_discovery_strategies.py` | none | 7 multi-instance mechanism checks |
-| `test_bridge_mock.py` | none | Python discovery + envelope round-trip |
-| `test_e2e.py` | running editor | manual smoke of the main tools |
+| 测试 | 需要 | 覆盖 |
+|------|------|------|
+| `run_regression.py` | 运行中的编辑器 | 11 组：工具、JSON 安全、单回复、断开、edit/undo、层级/prefab、batch 完整性、导入流水线、sdk 健康循环、animator、参数投递 |
+| `test_mcp_stdio_smoke.py` | 无（自启 server） | 36 工具 stdio 冒烟 |
+| `test_tcpws_transport.py` | 编辑器（`VrcMcp.Transport=tcpws`） | 13 项原始帧/断开/batch/多客户端/心跳检查 |
+| `test_discovery_strategies.py` | 无 | 7 项多实例机制检查 |
+| `test_bridge_mock.py` | 无 | Python 发现 + 信封往返 |
+| `test_e2e.py` | 运行中的编辑器 | 主要工具手动冒烟 |
 
-Compile check (batch): `D:\Unity\2022.3.22f1\Editor\Unity.exe -batchmode -quit
--projectPath "<your project>" -logFile compile.log` — then grep for `error CS`.
+编译检查（批处理）：`D:\Unity\2022.3.22f1\Editor\Unity.exe -batchmode -quit -projectPath "<your project>" -logFile compile.log`，然后 grep `error CS`。
 
-## Phases
+## 阶段
 
-| Phase | Scope | Status |
-|-------|-------|--------|
-| 1 | Skeleton: transports, envelope, dispatcher, compat registry, channel handshake, batch state machine, read tools, Python server | done |
-| 2 | Edit tools: transform/component/edit_* + write-validation layer | done |
-| 3 | Import: FBX, animations, expressions, PhysBone, menu | done |
-| 4 | run_vrchat_validation + validation_catalog.json + golden seeds | done |
-| 5 | import_avatar_from_zip + open_vrc_control_panel + SDK health + control panel | done — all phases complete (36 tools, regression 11/11, TcpWs 13/13, multi-instance 7/7) |
+| 阶段 | 范围 | 状态 |
+|------|------|------|
+| 1 | 骨架：传输、信封、分发器、兼容注册表、channel 握手、batch 状态机、读取工具、Python 服务端 | 完成 |
+| 2 | 编辑工具：transform/component/edit_* + 写校验层 | 完成 |
+| 3 | 导入：FBX、动画、表情、PhysBone、菜单 | 完成 |
+| 4 | run_vrchat_validation + validation_catalog.json + golden seeds | 完成 |
+| 5 | import_avatar_from_zip + open_vrc_control_panel + SDK 健康 + 控制面板 | 完成——全阶段完成（36 工具，回归 11/11，TcpWs 13/13，多实例 7/7） |
+
+## 许可证
+
+[MIT](LICENSE)
