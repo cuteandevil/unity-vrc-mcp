@@ -1,9 +1,9 @@
 # unity-vrc-mcp
 
-Unity-LLM 桥：一个 MCP 服务器，让 agent CLI（opencode）在**运行中的 Unity 编辑器**里编辑 VRChat 模型——场景层级、选中对象、undo 事务、Console、FBX 导入、Animator 编辑、VRCSDK 健康检查，以及一键 `import_avatar_from_zip`。
+Unity-LLM 桥：一个 MCP server，让任意 agent CLI 在**运行中的 Unity 编辑器**里编辑 VRChat 模型——场景层级、选中对象、undo 事务、Console、FBX 导入、Animator 编辑、VRCSDK 健康检查，以及一键 `import_avatar_from_zip`。
 
 ```
-agent CLI (opencode) ──stdio──► FastMCP server (Python) ──WebSocket──► Unity Editor 插件 (com.vrchat-mcp)
+agent CLI ──stdio──► FastMCP server (Python) ──WebSocket──► Unity Editor 插件 (com.vrchat-mcp)
 ```
 
 完整设计文档见 [docs/DESIGN.md](docs/DESIGN.md)（架构、传输层、兼容性注册表、batch/undo 状态机、校验层、导入流水线、阶段划分、风险登记、§0 验证纪律）。从 DESIGN.md 顶部的索引开始查阅任意主题。
@@ -25,7 +25,7 @@ agent CLI (opencode) ──stdio──► FastMCP server (Python) ──WebSocke
    uv run unity-mcp-server
    ```
 
-3. **opencode。** 复制 `opencode.example.json` → `opencode.json`（或合并 `mcp.unity-vrc` 配置块），把 `UNITY_MCP_PROJECT_DIR` 设为你 Unity 项目的路径，重启 opencode。
+3. **MCP 客户端。** 把 `opencode.example.json` 作为配置参考（任意支持 stdio MCP 的 agent CLI 均可），设置 `UNITY_MCP_PROJECT_DIR` 为你 Unity 项目的路径，重启 agent 会话。
 
    如果项目目录有歧义（多个 Unity 实例），用 `UNITY_MCP_CHANNEL_FILE` 钉死具体的 channel 文件。选择规则：最新的 channel 文件胜出；mtime 相同 → ctime；完全相同 → 拒绝并提示钉定。
 
@@ -38,13 +38,13 @@ agent CLI (opencode) ──stdio──► FastMCP server (Python) ──WebSocke
 - **Animator**：`create_animator_controller`、`add_animator_state`、`add_animator_transition`、`get_animator_controller`
 - **模型/SDK**：`import_avatar_from_zip`、`import_unitypackage`、`apply_shader_package_install`、`open_vrc_control_panel`、`sdk_repair_test_files`
 
-破坏性工具使用权限前缀（`edit_*`、`apply_*`、`save_*`、`import_*`、`sdk_*` → 在 opencode.json 中请求审批）。新增工具/规则需要重启 opencode 会话才会出现在工具列表里。
+破坏性工具使用权限前缀（`edit_*`、`apply_*`、`save_*`、`import_*`、`sdk_*` → 在 agent CLI 配置中请求审批）。新增工具/规则需要重启 agent 会话才会出现在工具列表里。
 
 ## 真实使用注意事项（试用期）
 
 - **VRCSDK 健康**：官方 SDK 3.10.x 自带两个会导致编译失败的未防护测试文件；VCC 重新同步会恢复它们。每次 VCC 更新后，检查 `get_project_info.sdkHealth`（预期 `ok`），若为 `broken` 则运行 `sdk_repair_test_files`（DESIGN §26/§27）。
 - 最后一个客户端断开时 batch 状态自动关闭（新连接上调用 `end_batch` 返回已关闭状态，不是错误）。
-- 支持多客户端（广播 + 按 id 匹配回复），但典型用法是一个编辑器对应一个 opencode 会话。
+- 支持多客户端（广播 + 按 id 匹配回复），但典型用法是一个编辑器对应一个 agent 会话。
 - **导入后洋红/粉色模型**：大多数 VRChat 模型包依赖第三方 shader（lilToon/Poiyomi），作者通常不打包（改用 VCC 安装）。如果项目缺少，材质会显示洋红且无 Console 报错。`import_unitypackage`/`import_avatar_from_zip` 现在会在 `needsAttention` 中报告（从序列化属性名推断家族，如 "lilToon shader missing on N material(s) ..."），导入流水线会对白名单家族（`lilToon`）从官方 VPM 源自动安装——成功记录到 `autoFixed`，失败保留在 `needsAttention` 并附带原因（DESIGN §31/§33）。`apply_shader_package_install` 可手动执行同样的安装（`family`；可选 `localZipPath` 用本地 zip 替代下载）。已安装的包绝不重装或替换。
 
 ## 测试
