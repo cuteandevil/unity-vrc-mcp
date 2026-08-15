@@ -6,8 +6,6 @@ Unity-LLM 桥：一个 MCP server，让任意 agent CLI 在**运行中的 Unity 
 agent CLI ──stdio──► FastMCP server (Python) ──WebSocket──► Unity Editor 插件 (com.vrchat-mcp)
 ```
 
-完整设计文档见 [docs/DESIGN.md](docs/DESIGN.md)（架构、传输层、兼容性注册表、batch/undo 状态机、校验层、导入流水线、阶段划分、风险登记、§0 验证纪律）。从 DESIGN.md 顶部的索引开始查阅任意主题。
-
 ## 环境要求
 
 - Unity 2022.3（在 **2022.3.22f1c1** 上测试；早期阶段也在 6000.4.0a2 上验证过），Windows

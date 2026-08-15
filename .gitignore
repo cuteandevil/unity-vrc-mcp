@@ -19,3 +19,5 @@ Thumbs.db
 # Local config
 opencode.json
 opencode.jsonc
+docs/DESIGN.md
+server/AVATAR_READINESS.md
